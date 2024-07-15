@@ -1,0 +1,20 @@
+<section class="mt-5 mb-5">
+  <div class="container">
+    <div class="text-center">
+      <h2>Наши чайные коллекции</h2>
+    </div>
+
+    <div class="card product-item wow animate__backInLeft">
+      <a class="popup-link">
+        <img src="{{product.image}}" alt="Tea" class="card-img-top card-image">
+      </a>
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <h3 class="card-title">Цена:{{ product.price }}</h3>
+        <p class="card-text">{{ product.description}}</p>
+        <a class="btn btn-primary px-4 hvr-grow-shadow" (click)="addToInput(product.title)">Купить</a>
+      </div>
+    </div>
+  </div>
+</section>
+

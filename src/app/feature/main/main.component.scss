@@ -1,0 +1,27 @@
+.popup {
+  width: 430px;
+  height: 150px;
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(165, 156, 207, 0.687);
+  text-align: center;
+  padding: 50px;
+}
+
+.popup-text {
+  margin-bottom: 10px;
+}
+
+.popup-button button {
+  border: 0;
+  background-color: rgba(179, 16, 16, 0.853);
+  padding: 10px;
+  color: aliceblue;
+}
+
+.section {
+  padding-bottom: 150px;
+  padding-top: 30px;
+}

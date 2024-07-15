@@ -1,0 +1,87 @@
+<section class="py-5 mb-5">
+  <div class="container">
+    <div class="text-center mb-5 ">
+      <h2>Сделать заказ</h2>
+    </div>
+    <div class="wow animate__fadeInLeftBig">
+      <form id="form" [formGroup]="orderForm" *ngIf="!processing" (ngSubmit)="onSubmit()">
+
+        <div class="row justify-content-center">
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="name">Имя</label>
+              <input type="text" class="form-control" id="first-name" formControlName="name" name required
+                [class]="{'border-danger':orderForm.get('name')?.invalid && (orderForm.get('name')?.dirty || orderForm.get('name')?.touched)}">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="surname">Фамилия</label>
+              <input type="text" class="form-control" id="last-name" formControlName="last_name" last_name required
+                [class]="{'border-danger':orderForm.get('last_name')?.invalid && (orderForm.get('last_name')?.dirty || orderForm.get('last_name')?.touched)}">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group">
+              <label for="phone">Телефон</label>
+              <input type="text" class="form-control input-number" id="phone" formControlName="phone" phone required
+                [class]="{'border-danger':orderForm.get('phone')?.invalid && (orderForm.get('phone')?.dirty || orderForm.get('phone')?.touched)}">
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="country">Страна</label>
+              <input type="text" class="form-control" id="country" formControlName="country">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="index">Индекс</label>
+              <input type="text" class="form-control input-number" id="index" formControlName="zip">
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="phone">Товар</label>
+              <input disabled type="text" class="form-control input-number" id="product"
+                [(ngModel)]="formValues.product">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="phone">Комментарий к заказу</label>
+              <input type="text" class="form-control input-number" id="phone" formControlName="comment">
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="address">Адрес</label>
+              <input type="text" class="form-control" id="address" formControlName="address" address required
+                [class]="{'border-danger':orderForm.get('address')?.invalid && (orderForm.get('address')?.dirty || orderForm.get('address')?.touched)}">
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary mt-4 mb-5 hvr-grow-shadow" id="button-submit"
+              [disabled]="orderForm.invalid">Отправить</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="bg-body-secondary text-center p-5 mb-5 popup" id="block" *ngIf="processing">
+        Спасибо за заказ. Мы свяжемся с вами в ближайшее время!
+      </div>
+    </div>
+  </div>
+</section>

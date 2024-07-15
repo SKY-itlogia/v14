@@ -1,0 +1,21 @@
+<section class="mt-5 mb-5 section">
+  <div class="container">
+    <div class="text-center">
+      <h2>Наши чайные коллекции</h2>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+      <div class="col mt-4" *ngFor="let product of products">
+        <div class="card wow animate__backInLeft">
+          <a href="assets/image/image1.png" class="popup-link">
+            <img src="{{product.image}}" alt="Tea" class="card-img-top">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <a class="btn btn-primary px-4 hvr-grow-shadow" [routerLink]="['/product', product.id]">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
