@@ -1,6 +1,6 @@
-<section class="py-5 mb-5">
+<section class="pt-5 section">
   <div class="container">
-    <div class="text-center mb-5 ">
+    <div class="text-center mb-5">
       <h2>Сделать заказ</h2>
     </div>
     <div class="wow animate__fadeInLeftBig">
@@ -12,6 +12,7 @@
               <label for="name">Имя</label>
               <input type="text" class="form-control" id="first-name" formControlName="name" name required
                 [class]="{'border-danger':orderForm.get('name')?.invalid && (orderForm.get('name')?.dirty || orderForm.get('name')?.touched)}">
+                
             </div>
           </div>
           <div class="col-md-2">
@@ -50,7 +51,7 @@
             <div class="form-group">
               <label for="phone">Товар</label>
               <input disabled type="text" class="form-control input-number" id="product"
-                [(ngModel)]="formValues.product">
+                [(ngModel)]="formValues.product" [ngModelOptions]="{standalone: true}">
             </div>
           </div>
           <div class="col-md-3">

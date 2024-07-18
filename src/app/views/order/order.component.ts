@@ -44,7 +44,7 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  onSubmit() { 
+  onSubmit() {
     if (this.orderForm.invalid) {
       return;
     }
